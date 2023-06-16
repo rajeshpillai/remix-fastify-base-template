@@ -1,0 +1,13 @@
+diff --git a/node_modules/@remix-run/dev/dist/compiler/server/compiler.js b/node_modules/@remix-run/dev/dist/compiler/server/compiler.js
+index 3a3a48a..fad43b9 100644
+--- a/node_modules/@remix-run/dev/dist/compiler/server/compiler.js
++++ b/node_modules/@remix-run/dev/dist/compiler/server/compiler.js
+@@ -92,7 +92,7 @@ const createEsbuildConfig = (ctx, channels) => {
+     minifySyntax: true,
+     minify: ctx.options.mode === "production" && ctx.config.serverMinify,
+     mainFields: ctx.config.serverMainFields,
+-    target: "node14",
++    target: "node18",
+     loader: loaders.loaders,
+     bundle: true,
+     logLevel: "silent",
