@@ -2,8 +2,9 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "dev": "npm-run-all dev:build --parallel \"watch:*\"",
-    "dev:build": "remix build",
+    "dev": "remix dev -c \"nodemon ./server.mjs\"",
+    "xdev": "npm-run-all dev:build --parallel \"watch:*\"",
+    "xdev:build": "remix build",
     "watch:remix": "remix watch",
     "watch:nm": "nodemon ./server.mjs",
     "prod:build": "remix build",

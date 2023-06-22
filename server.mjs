@@ -1,3 +1,5 @@
+
+import {broadcastDevReady } from '@remix-run/node';
 import fastify from "fastify";
 import * as serverBuild from "./build/index.mjs";
 import { remixFastifyPlugin } from "@mcansh/remix-fastify";
@@ -20,6 +22,10 @@ async function start() {
     .listen({ port, host: "0.0.0.0" })
     .then((address) => {
       console.log(`Fastify server listening at ${address}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.log("broadCastReady!!!");
+        broadcastDevReady(serverBuild)
+      }
     })
     .catch((error) => {
       console.error(error);
